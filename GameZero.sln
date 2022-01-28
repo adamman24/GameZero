@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameZero", "GameZero\GameZero.csproj", "{C047708D-42E3-42B1-A5E2-6026A6DA99C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C047708D-42E3-42B1-A5E2-6026A6DA99C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C047708D-42E3-42B1-A5E2-6026A6DA99C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C047708D-42E3-42B1-A5E2-6026A6DA99C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C047708D-42E3-42B1-A5E2-6026A6DA99C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBE02BAC-B261-418F-9F1B-590712388471}
+	EndGlobalSection
+EndGlobal
