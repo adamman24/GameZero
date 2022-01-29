@@ -17,11 +17,19 @@ namespace GameZero
 
         private Texture2D texture;
 
-        private Vector2 position = new Vector2(20,200);
+        /// <summary>
+        /// possition of bat
+        /// </summary>
+        public Vector2 position = new Vector2(20,200);
 
         private bool flipped;
 
         private BoundingCircle bounds = new BoundingCircle(new Vector2(20, 200), 16);
+
+        /// <summary>
+        /// ability to disable keybaord
+        /// </summary>
+        public bool disable = false;
 
         /// <summary>
         /// bounding volume of the sprite
@@ -55,24 +63,28 @@ namespace GameZero
             if (keyboardState.IsKeyDown(Keys.LeftShift) || keyboardState.IsKeyDown(Keys.RightShift)) sprint = 2;
             else sprint = 1;
 
-            // Apply the gamepad movement with inverted Y axis
-            position += gamePadState.ThumbSticks.Left * new Vector2(1, -1);
-            if (gamePadState.ThumbSticks.Left.X < 0) flipped = true;
-            if (gamePadState.ThumbSticks.Left.X > 0) flipped = false;
+            if (!disable)
+            {
+                // Apply the gamepad movement with inverted Y axis
+                position += gamePadState.ThumbSticks.Left * new Vector2(1, -1);
+                if (gamePadState.ThumbSticks.Left.X < 0) flipped = true;
+                if (gamePadState.ThumbSticks.Left.X > 0) flipped = false;
 
-            // Apply keyboard movement
-            if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W)) position += new Vector2(0, -1) * sprint;
-            if (keyboardState.IsKeyDown(Keys.Down) || keyboardState.IsKeyDown(Keys.S)) position += new Vector2(0, 1) * sprint;
-            if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
-            {
-                position += new Vector2(-1, 0) * sprint;
-                flipped = true;
-            }
-            if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
-            {
-                position += new Vector2(1, 0) * sprint;
-                flipped = false;
-            }
+                // Apply keyboard movement
+                if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W)) position += new Vector2(0, -1) * sprint;
+                if (keyboardState.IsKeyDown(Keys.Down) || keyboardState.IsKeyDown(Keys.S)) position += new Vector2(0, 1) * sprint;
+                if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
+                {
+                    position += new Vector2(-1, 0) * sprint;
+                    flipped = true;
+                }
+                if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
+                {
+                    position += new Vector2(1, 0) * sprint;
+                    flipped = false;
+                }
+            }else
+            { }
             //update the bounds
             bounds.Center = position;
         }

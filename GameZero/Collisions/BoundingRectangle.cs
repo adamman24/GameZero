@@ -23,6 +23,13 @@ namespace GameZero.Collisions
 
         public float Bottom => Y + Height;
 
+        /// <summary>
+        /// create bounding rectangle
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public BoundingRectangle(float x, float y, float width, float height)
         {
             X = x;
@@ -31,6 +38,12 @@ namespace GameZero.Collisions
             Height = height;
         }
 
+        /// <summary>
+        /// create bounding rectangle
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public BoundingRectangle(Vector2 position, float width, float height)
         {
             X = position.X;
@@ -39,11 +52,11 @@ namespace GameZero.Collisions
             Height = height;
         }
 
-        public bool CollidesWith(BoundingRectangle other)
-        {
-            return CollisionHelper.Collides(this, other);
-        }
-
+        /// <summary>
+        /// check for collision
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public bool CollidesWith(BoundingCircle other)
         {
             return CollisionHelper.Collides(other, this);
