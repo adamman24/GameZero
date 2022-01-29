@@ -164,6 +164,7 @@ namespace GameZero
 
             //show number of bats and how to exit
             spriteBatch.DrawString(spriteFont, $"Bats: {numBats}", new Vector2(5, 5), Color.Black);
+            spriteBatch.DrawString(spriteFont, "Press space for more bats :)", new Vector2(5, 445), Color.Black, 0, new Vector2(0, 0), .5f, SpriteEffects.None, 0);
             spriteBatch.DrawString(spriteFont, "Press escape to end game", new Vector2(5, 460), Color.Black, 0, new Vector2(0,0), .5f, SpriteEffects.None, 0);
             
             GraphicsDevice.Clear(Color.BlanchedAlmond);
